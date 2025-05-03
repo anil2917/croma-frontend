@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Product from './Product'
-import hp from '../images/hp.webp'
+
 import '../App.css' 
 import Deals from './Deals'
 import Slider from './Slider'
