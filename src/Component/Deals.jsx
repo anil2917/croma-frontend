@@ -4,7 +4,7 @@ import frige from "../images/FRIGE.webp";
 import AC from "../images/AC.webp";
 import ARO from "../images/ARO.webp";
 import COOLER from "../images/COOLER.webp";
-import TV from "../images/TV.PNG";
+import TV from "../images/TV.png";
 import WASHING from "../images/WASHING.webp";
 function Deals() {
   return (
