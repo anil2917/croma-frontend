@@ -5,7 +5,6 @@ import img3 from "../images/SLIDE3.webp";
 import img4 from "../images/SLIDE4.webp";
 import img5 from "../images/SLIDE5.webp";
 import img6 from "../images/SLIDE6.webp";
-
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 

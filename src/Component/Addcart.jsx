@@ -24,7 +24,7 @@ function Addcart() {
       {Checkout === "pay" ? (
         <RazorpayButton />
       ) : (
-        <div className="lg:w-[60%] text-black rounded lg:ml-20">
+        <div className=" w-[50%] text-black rounded ml-30">
           <div className=" lg:w-[100%] sticky top-22 mb-50">
             <div className="flex justify-between items-center m-2 lg:mx-0 md:w-[98%] w-[98%] lg:w-[100%] sticky top-22 ">
               <h1 className="lg:text-3xl ">YOUR CART </h1>
