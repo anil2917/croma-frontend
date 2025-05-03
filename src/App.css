@@ -1,0 +1,73 @@
+@import "leaflet/dist/leaflet.css";
+.sport {
+    width: 20%;
+    /* height: 310px; */
+    margin: 0px -6PX;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+#sport {
+    width: 100%;
+    /* height: 320px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .sport2 {
+    /* width: 42%; */
+    /* height: 3px; */
+    margin: 0px 8px;
+    /* display: flex; */
+    justify-content: space-around;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .d-none{
+    display: none;
+    color: #888686;
+}
+.img
+{
+   /* width:  33% */
+}
+
+  .hover-item{
+    display: none;
+  }
+  .user-hover:hover .hover-item{
+    display: block;
+    /* border:  1px solid red; */
+  }
+  .hover-a{
+    color: aqua;
+  }
+
+  @media only screen and (max-width: 768px) {
+  
+    #header .links{
+      position: absolute;
+      top: 65px;
+      left: -12px;
+      background-color: black;
+      color: white;
+      width: 30%;
+      text-align: center;
+    }
+
+    #header .links ul{
+      width: 100%;
+    }
+
+    #header .active{
+      position: absolute;
+      flex-direction: column;
+      top: 80px;
+      left: -300px;
+      background-color: black;
+      color: white;
+    }
+
+  }
