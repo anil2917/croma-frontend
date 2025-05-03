@@ -19,8 +19,8 @@ function Home() {
         <Deals/>
         <Product/>
         <Footer/> 
-        <Addcart/>
-        <Map/>
+        {/* <Addcart/> */}
+        {/* <Map/> */}
     </div>
       
     </>

@@ -42,9 +42,9 @@ function Addcart() {
             </div>
             <hr />
 
-            <div className="item flex justify-center `">
+            <div className="item flex justify-center w-[100%]`">
               {isEmpty ? (
-                <p className=" text-2 mt-10  font-bold text-black">
+                <p className=" text-2 mt-10  font-bold ">
                   <GiShoppingCart className="lg:w-50 w-30  lg:h-50 h-30" />
                   <span className="lg:ml-11">Your cart is empty</span>
                 </p>
