@@ -85,13 +85,13 @@ function Slider() {
                   className={`img ${i == slider ? "active" : "d-none"}`}
                   
                 >
-                  <img src={item.image} alt="" width={"99%"} />
+                  <img src={item.image} alt="" width={"100%"} />
                 </div>
               </>
             );
           })} 
-          <button  ref={buttonRef} onClick={leftBtn} className="w-16 h-13  absolute text-white items-center flex justify-center text-2xl lg:text-4xl  top-20 md:top-38 lg:top-85 lg:left-[-9px] left-[-12px] rounded  " ><FaAngleLeft /></button>
-          <button  ref={buttonRef} onClick={rgtBtn}   className="w-16 h-13  absolute text-white items-center flex justify-center  text-2xl lg:text-4xl md:top-38 top-20 lg:top-85 lg:right-3 right-[-13px] rounded" ><FaAngleRight />
+          <button  ref={buttonRef} onClick={leftBtn} className=" h-13  absolute text-white items-center flex justify-center text-2xl lg:text-4xl  top-20 md:top-38 lg:top-85 lg:left-[-9px] left-[-12px] rounded  " ></button>
+          <button  ref={buttonRef} onClick={rgtBtn}   className=" h-13  absolute text-white items-center flex justify-center  text-2xl lg:text-4xl md:top-38 top-20 lg:top-85 lg:right-3 right-[-13px] rounded" >
           </button>
         </div>
 

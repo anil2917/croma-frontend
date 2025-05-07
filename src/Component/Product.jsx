@@ -50,12 +50,12 @@ function Product() {
       <div className="bg-black w-full flex flex-wrap justify-center items-center">
   {filterData.map((item) => {
        return (
-            <div className="lg:w-[29%] w-[80%] h-[390px] lg:h-[470px] md:w-[40%] flex-row justify-center items-center  block border-b-[0.8px] border-amber-50  m-6  mt-3 mb-2">
-              <div className="lg:w-[350px] lg:h-[240px] h-[180px] flex-wrap justify-center content-center items-center rounded-3xl bg-[#202020] overflow-hidden">
+            <div className="lg:w-[29%] md:w-[80%] md:h-[400px] h-[250px] lg:h-[470px] md:w-[40%] sm:flex-col md:flex-row lg:flex-row md:flex-wrap justify-center items-center  block border-b-[0.8px] border-amber-50  m-6  mt-3 mb-2">
+              <div className="lg:w-[350px] lg:h-[240px] sm:w-[300px] h-[190px] flex-wrap justify-center content-center items-center rounded-3xl bg-[#202020] overflow-hidden">
                 <img src={item.image} alt="" className="w-[100%] h-[100%]   " />
               </div>
-              <div className=" lg:w-[350px] lg:h-[190px] h-auto mt-2 rounded-3xl">
-                <h2 className=" text-white font-bold lg:text-[18px] text-[12px]  ml-1 h-[40px]  lg:h-[60px] overflow-hidden">
+              <div className=" lg:w-[350px] lg:h-[190px]  h-auto lg:mt-2    flex-col justify-center w-[230px] sm:pl-3 rounded-3xl">
+                <h2 className=" text-white  font-bold lg:text-[18px] text-[12px]  ml-1 h-[40px]  lg:h-[60px] overflow-hidden">
                   {item.title}
                 </h2>
                 <h2 className=" text-white  lg:text-1xl  ml-1 lg:h-[25px] h-[20px] uppercase overflow-hidden ">

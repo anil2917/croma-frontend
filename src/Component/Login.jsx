@@ -97,7 +97,7 @@ function Login() {
 
   return (
     <><Toaster/>
-      <div className="bg-black w-[100%] h-[100vh] flex  justify-center items-center">
+      <div className="bg-black lg:w-[100%] w-[80%] h-[100vh] flex  justify-center items-center">
         {step === "send" ? (
           <div className="w-[525px] h-[406px]   border border-[#353535] bg-black flex  justify-center items-center text-white rounded-l">
             <div className="w-[378px] h-[346px]    ">
