@@ -97,10 +97,10 @@ function Login() {
 
   return (
     <><Toaster/>
-      <div className="bg-black lg:w-[100%] w-[80%] h-[100vh] flex  justify-center items-center">
+      <div className="bg-black w-[100%]  h-[100vh] flex  justify-center items-center">
         {step === "send" ? (
-          <div className="w-[525px] h-[406px]   border border-[#353535] bg-black flex  justify-center items-center text-white rounded-l">
-            <div className="w-[378px] h-[346px]    ">
+          <div className="lg:w-[525px]  lg:h-[406px] h-[380px] w-[405px] border border-[#353535] bg-black flex  justify-center items-center text-white rounded-l">
+            <div className="lg:w-[378px] w-[320px] h-[346px]    ">
               <div className=" w-full flex  border border-[#353535] rounded-l">
                 <p className="w-[50%] flex justify-center items-center h-13">
                   <a href="">Login</a>
@@ -169,7 +169,7 @@ function Login() {
                   </button>
                 ) : (
                   <button
-                    className="w-full bg-[#12daa8] rounded-xl text-black font-bold text-[13px]"
+                    className="lg:w-full lg:ml-0 w-[90%] ml-2 bg-[#12daa8] rounded-xl text-black font-bold text-[13px]"
                     onClick={sendOtp}
                     // disabled={!contact}
                     disabled

@@ -102,7 +102,7 @@ function Addcart() {
                             </button>
                           </div>
 
-                          <div className="price w-[10%] items-center flex lg:text-xl font-bold ml-2">
+                          <div className="price w-[10%] items-center  lg:text-xl font-bold ml-2">
                             <p>
                               $
                               {item.quantity *
