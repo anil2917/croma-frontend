@@ -8,7 +8,7 @@ import { IoMenuOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-  import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Product() {
   let [products, setdata] = useState([]);
@@ -35,8 +35,6 @@ function Product() {
     featchdata();
   }, []);
 
-
-
   const filterItems = (value) => {
     console.log("ggdggdgdg");
     const filterd = products.filter((item) => item.category == value);
@@ -48,14 +46,14 @@ function Product() {
     <>
       <p className="text-4xl text-white  p-5 ">Latest Launches </p>
       <div className="bg-black w-full flex flex-wrap justify-center items-center">
-  {filterData.slice(0,12).map((item) => {
-       return (
-            <div className="lg:w-[29%] md:w-[80%] md:h-[400px] h-[250px] lg:h-[470px] md:w-[40%] sm:flex-col md:flex-row lg:flex-row md:flex-wrap justify-center items-center  block border-b-[0.8px] border-amber-50  m-6  mt-3 mb-2">
-              <div className="lg:w-[350px] lg:h-[240px] sm:w-[300px] h-[190px] flex-wrap justify-center content-center items-center rounded-3xl bg-[#202020] overflow-hidden">
+        {filterData.slice(0, 12).map((item) => {
+          return (
+            <div className="lg:w-[29%] w-[80%] lg:h-[470px] md:w-[40%] flex md:flex-col lg:flex-col justify-center items-center border-b-[0.8px] py-5 border-amber-50 m-2  my-3">
+              <div className="lg:w-[350px] md:w-[280px] lg:h-[240px] h-[180px] w-[27%] flex-wrap justify-center content-center items-center rounded-3xl bg-[#202020] overflow-hidden">
                 <img src={item.image} alt="" className="w-[100%] h-[100%]   " />
               </div>
-              <div className=" lg:w-[350px] lg:h-[190px]  h-auto lg:mt-2    flex-col justify-center w-[230px] sm:pl-3 rounded-3xl">
-                <h2 className=" text-white  font-bold lg:text-[18px] text-[12px]  ml-1 h-[40px]  lg:h-[60px] overflow-hidden">
+              <div className="ml-4  md:ml-1 lg:w-[350px] lg:h-[190px] h-auto mt-2 rounded-3xl md:w-[78%] w-[68%]">
+                <h2 className=" text-white font-bold lg:text-[18px] text-[12px]  ml-1 h-[40px]  lg:h-[60px] overflow-hidden">
                   {item.title}
                 </h2>
                 <h2 className=" text-white  lg:text-1xl  ml-1 lg:h-[25px] h-[20px] uppercase overflow-hidden ">
@@ -69,23 +67,33 @@ function Product() {
                   {Math.round(
                     item.price -
                       item.price *
-                        (item.discount == null
-                          ? 3 / 100
-                          : item.discount / 100)
+                        (item.discount == null ? 3 / 100 : item.discount / 100)
                   )}
-                  {(item.discount==null ?(""):(<span className="font-bold lg:text-[15px] text-[9px]  ml-1 text-[#888686] line-through">
-                    ${item.price}
-                  </span>))}
-               {(item.discount==null ?(""):(   <span className="font-bold lg:text-[16px] text-[14px] text-[#888686]  lg:ml-6 ml-15 ">
-                    (save
-                    <span className="lg:text-[12px] text-[9px] ">
-                      {Math.round((item.price*item.discount)/100)}
+                  {item.discount == null ? (
+                    ""
+                  ) : (
+                    <span className="font-bold lg:text-[15px] text-[9px]  ml-1 text-[#888686] line-through">
+                      ${item.price}
                     </span>
-                    ){" "}
-                  </span>))}
-                {(item.discount==null ?(""):(  <span className=" lg:text-[14px] text-[12px] border p-1 lg:ml-5 rounded ">
-                    {item.discount}%off
-                  </span>))}
+                  )}
+                  {item.discount == null ? (
+                    ""
+                  ) : (
+                    <span className="font-bold lg:text-[16px] text-[14px] text-[#888686]  lg:ml-6 ml-15 ">
+                      (save
+                      <span className="lg:text-[12px] text-[9px] ">
+                        {Math.round((item.price * item.discount) / 100)}
+                      </span>
+                      ){" "}
+                    </span>
+                  )}
+                  {item.discount == null ? (
+                    ""
+                  ) : (
+                    <span className=" lg:text-[14px] text-[12px] border p-1 lg:ml-5 rounded ">
+                      {item.discount}%off
+                    </span>
+                  )}
                 </h2>
                 <p className=" text-white flex  ml-1  ">
                   <GrDeliver className="mr-2 mt-1 text-xl" />
@@ -104,7 +112,6 @@ function Product() {
           );
         })}
       </div>
-
     </>
   );
 }

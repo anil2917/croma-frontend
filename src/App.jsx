@@ -23,6 +23,7 @@ import Mordetail from './Component/Mordetail'
 import Verify from './Component/Verify'
 import Payment from './Component/Payment'
 import RazorpayButton from "./Component/RazorpayButton";
+import OtpPage from './Component/Login/OtpPage'
 
 
 function App() {
@@ -42,15 +43,16 @@ function App() {
       <Route path="/Mobile" element={<Mobile/>}/>
       <Route path="/Gameing" element={<Gameing/>}/>
       <Route path="/Musice" element={<Musice/>}/>
-      <Route path="/" element={<Home/>}/>
+      <Route path="/home" element={<Home/>}/>
       <Route path="/Deals" element={<Deals/>}/>
       <Route path="/Slider" element={<Slider/>}/>
       <Route path="/Dropdown" element={<Dropdown/>}/>
       <Route path="/Map" element={<Map/>}/> 
       <Route path="/Footer" element={<Footer/>}/>   
-      <Route path="/Login" element={<Login/>}/>   
+      <Route path="/" element={<Login/>}/>   
       <Route path="/Mordetail" element={<Mordetail/>}/>  
       <Route path="/Verify" element={<Verify/>}/>  
+      <Route path="/otppage" element={<OtpPage/>}/>  
       <Route path="/upi" element={<Payment />} />
       <Route path="/upi2" element={<RazorpayButton />
 } />

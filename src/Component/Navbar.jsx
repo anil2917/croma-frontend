@@ -34,11 +34,11 @@ function Navbar() {
       >
         <div className="w-full lg:w-[80%] h-17 flex text-center justify-between lg:justify-between text-white mx-auto">
           <div className="text-center pt-4 flex w-30">
-            <a className="text-white text-4xl flex ml-1 ">
-              <IoMenuOutline className="text-xl  lg:hidden md:hidden mr-2 mt-[-5px]" onClick={toggleMEnu} />
+            <a className="text-white text-4xl flex ml-1 " >
+              <IoMenuOutline className="text-4xl  lg:hidden md:hidden mr-2 mt-[]" onClick={toggleMEnu} />
             </a>
-            <a className="text-white text-1xl font-semibold font-serif   ">
-              <img src={logo} alt="" className="w-26 h-10 bg-black md:ml-10" />
+            <a className="text-white text-1xl font-semibold font-serif "href={"/home"}>
+              <img src={logo} alt="" className="w-26 h-10 bg-black md:ml-10 lg:ml-[-10px]" />
             </a>
           </div>
           <div className="lg:flex flex lg:w-[50%] lg:ml-50">
@@ -66,7 +66,7 @@ function Navbar() {
               <div className="relative ">
                 <FaUser className="hover:text-[#12daa8] sm:mr- md:mr-8"  />
                 <div
-                  className="hover-item  h-auto  bg-black absolute top-10 md:w-[250px]  w-[190px] right-[-44px] md:right-[-100px] lg:right-[-190px] lg:w-[300px] lg:top-[47px] "
+                  className="hover-item  h-auto  bg-black absolute top-10 md:w-[250px]  w-[190px] right-[-60px] md:right-[-100px] lg:right-[-190px] lg:w-[300px] lg:top-[47px] "
                   // style={{ right: "-190px", width: "300px", top: "47px" }}
                 >
                   <Link to="/login">
@@ -174,7 +174,7 @@ function Navbar() {
                 </div>
               </div>
             </h2>
-            <a href={"/Addcart"} className="text-[26px] lg:ml-15 ">
+            <a href={"/Addcart"} className="text-[26px] lg:ml-15 ml-1 ">
               <IoCartOutline />
               <div
                 className=" w-4 h-4 text-[10px] text-b text-black bg-[#12daa8] z-10 items-center ml-4 mt-[-30px] "

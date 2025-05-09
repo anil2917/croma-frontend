@@ -55,7 +55,7 @@ function Addcart() {
                       {items.map((item) => (
                         <li
                           key={item.id}
-                          className="  bg-white  flex justify-between my-3 p-4"
+                          className="  bg-white border  flex justify-between my-3 p-4"
                         >
                           <img
                             src={item.image}
@@ -102,7 +102,7 @@ function Addcart() {
                             </button>
                           </div>
 
-                          <div className="price w-[10%] items-center  lg:text-xl font-bold ml-2">
+                          <div className="price w-[10%] items-center  lg:text-xl font-bold ml-2 lg:mt-10">
                             <p>
                               $
                               {item.quantity *
