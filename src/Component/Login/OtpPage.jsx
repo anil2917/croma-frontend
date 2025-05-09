@@ -31,7 +31,7 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
     if (finalOtp === sentOtp) {
       toast.success("Login successful!");
       setTimeout(() => {
-        navigate("/");
+        navigate("/home");
       }, 2000); // 3 seconds delay
     } else {
       toast.error("Invalid otp");
@@ -66,7 +66,7 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
                 // value={otp.otp1}
                 onChange={getOtp}
                 
-                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4"
+                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4 outline-none"
                 maxLength={1}
                 name="otp1"
               />
@@ -75,7 +75,7 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
                 required
                 // value={finalOtp}
                 onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4"
+                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4 outline-none"
                 maxLength={1}
                 name="otp2"
               />
@@ -84,7 +84,7 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
                 required
                 // value={finalOtp}
                 onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4"
+                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4 outline-none"
                 maxLength={1}
                 name="otp3"
               />
@@ -93,7 +93,7 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
                 required
                 // value={finalOtp}
                 onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4"
+                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4 outline-none "
                 maxLength={1}
                 name="otp4"
               />
