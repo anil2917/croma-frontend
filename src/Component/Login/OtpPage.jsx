@@ -3,51 +3,64 @@ import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useRef } from "react";
 
-function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,message}) {
-  const [otp, setOtp] = useState("");
+function OtpPage({
+  sentOtp,
+  finalOtp,
+  setFinalOtp,
+  contact,
+  sendOtp,
+  timeLeft,
+  message,
+}) {
+  console.log(sentOtp);
   const navigate = useNavigate();
   const [resend, setresend] = useState("wait");
-  console.log(finalOtp);
-  console.log(sentOtp);
-  console.log(contact);
-  function getOtp(e) {
-    setOtp({
-      ...otp,
-      [e.target.name]: e.target.value,
-    });
-  }
-  useEffect(() => {
-    let concatenatedValues = "";
-    for (let key in otp) {
-      if (otp.hasOwnProperty(key)) {
-        concatenatedValues += otp[key];
+  const inputRefs = useRef([]);
+
+  function getOtp(e, index) {
+    const value = e.target.value;
+    if (/^\d$/.test(value)) {
+      if (index < inputRefs.current.length - 1) {
+        inputRefs.current[index + 1].focus();
       }
     }
-    setFinalOtp(concatenatedValues);
-  }, [otp]);
-
-  const verifyOtp = () => {
-    if (finalOtp === sentOtp) {
-      toast.success("Login successful!");
-      setTimeout(() => {
-        navigate("/home");
-      }, 2000); // 3 seconds delay
+  }
+  const checkOTP = () => {
+    const enteredOTP = inputRefs.current.map((input) => input.value).join("");
+    if (enteredOTP.length === sentOtp.length) {
+      if (enteredOTP === sentOtp) {
+        toast.success(" OTP is correct");
+        
+        setTimeout(()=>{
+navigate("/home")
+        },2000)
+      } else {
+        toast.error(" OTP is incorrect");
+      }
     } else {
-      toast.error("Invalid otp");
+      alert("");
     }
   };
+ 
   useEffect(() => {
     const timer = setTimeout(() => {
       setresend("responce");
     }, 30000); // 30 seconds
-
     return () => clearTimeout(timer);
   }, []);
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && e.target.value === "" && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
+  };
 
   return (
     <>
       <Toaster />
+
       <div className="w-[500px]    border border-[#353535] bg-black flex  justify-center items-center text-white rounded-l">
         <div className="w-[378px] h-[346px]    ">
           <div className=" w-full flex  justify-center ">
@@ -60,43 +73,22 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
           </div>
           <div className="w-full h-15 ">
             <form action="" className="ml-11">
-              <input
-                type="text"
-                required
-                // value={otp.otp1}
-                onChange={getOtp}
-                
-                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4 outline-none"
-                maxLength={1}
-                name="otp1"
-              />
-              <input
-                type="text"
-                required
-                // value={finalOtp}
-                onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4 outline-none"
-                maxLength={1}
-                name="otp2"
-              />
-              <input
-                type="text"
-                required
-                // value={finalOtp}
-                onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4 outline-none"
-                maxLength={1}
-                name="otp3"
-              />
-              <input
-                type="text"
-                required
-                // value={finalOtp}
-                onChange={getOtp}
-                className="w-[15%] h-13 border-1 border-white text-2xl rounded-[7px] placeholder:text-xl m-3 p-4 outline-none "
-                maxLength={1}
-                name="otp4"
-              />
+              <div
+                style={{ display: "flex", gap: "10px" }}
+                className=""
+              >
+                {[...Array(4)].map((_, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    maxLength="1"
+                    onChange={(e) => getOtp(e, index)}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    ref={(el) => (inputRefs.current[index] = el)}
+                    className="w-[15%] h-13 border-1 border-white rounded-[7px] text-2xl placeholder:text-xl m-3 p-4 outline-none text-white"
+                  />
+                ))}
+              </div>
             </form>
           </div>
 
@@ -116,17 +108,17 @@ function OtpPage({ sentOtp, finalOtp,setFinalOtp ,contact,sendOtp ,timeLeft ,mes
                   Resend otp
                 </span>
               </p>
-            )}  
+            )}
           </div>
           <div className="w-full flex   h-13 mt-3">
             <button
-              className="w-full bg-[#353535] rounded-xl text-[#a1a1a1] font-bold text-[13px]"
-              onClick={verifyOtp}
+              className="w-full bg-[#12daa8] rounded-xl text-black font-bold text-[13px]"
+              onClick={checkOTP}
             >
               <p>Submit otp</p>
             </button>
           </div>
-           {message && (
+          {message && (
             <p className="text-center text-sm text-gray-700 mt-3">{message}</p>
           )}
         </div>

@@ -14,6 +14,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdDevices } from "react-icons/md";
 import { LuMessageSquareDot } from "react-icons/lu";
 import { MdLogin } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 
 function Navbar() {
   const { totalUniqueItems } = useCart();
@@ -35,7 +36,7 @@ function Navbar() {
         <div className="w-full lg:w-[80%] h-17 flex text-center justify-between lg:justify-between text-white mx-auto">
           <div className="text-center pt-4 flex w-30">
             <a className="text-white text-4xl flex ml-1 " >
-              <IoMenuOutline className="text-4xl  lg:hidden md:hidden mr-2 mt-[]" onClick={toggleMEnu} />
+             {toggle ?  <IoClose  className="text-4xl  lg:hidden md:hidden mr-2 mt-[]" onClick={toggleMEnu} /> : <IoMenuOutline className="text-4xl  lg:hidden md:hidden mr-2 mt-[]" onClick={toggleMEnu} />}
             </a>
             <a className="text-white text-1xl font-semibold font-serif "href={"/home"}>
               <img src={logo} alt="" className="w-26 h-10 bg-black md:ml-10 lg:ml-[-10px]" />

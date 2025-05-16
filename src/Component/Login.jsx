@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import OtpPage from "./Login/OtpPage";
+import Mordetail from "./Signup";
+import axios from "axios";
+
 function Login() {
   const [contact, setContact] = useState("");
   const [otp, setOtp] = useState("");
@@ -12,14 +15,10 @@ function Login() {
   const [finalOtp, setFinalOtp] = useState("");
   // import React{ useState} from "react";
   const { ssss, setssss } = useState("");
-
   const [timeLeft, setTimeLeft] = useState(30);
   const navigate = useNavigate();
-
-  console.log(contact);
-  console.log("otp",otp);
-  console.log("final", finalOtp);
-  console.log(message);
+  const [Number, setNumber] = useState();
+  
   const generateOTP = () => {
     return Math.floor(1000 + Math.random() * 9000).toString();
   };
@@ -42,24 +41,15 @@ function Login() {
   }, [otp]);
 
   const sendOtp = () => {
+    console.log("funnctionn  runnn");
     const code = generateOTP();
     setSentOtp(code);
     setStep("verify");
     setMessage(`OTP sent to ${contact}: ${code}`);
+    localStorage.setItem("Number", JSON.stringify(contact));
     // For demo purposes
     // In a real app, replace this with an API call to send the OTP
     // console.log(code);
-  };
-
-  const verifyOtp = () => {
-    if (finalOtp === sentOtp) {
-      toast.success("Login successful!");
-      setTimeout(() => {
-        navigate("/");
-      }, 2000); // 3 seconds delay
-    } else {
-      toast.error("Invalid otp");
-    }
   };
 
   const handleChange = (e) => {
@@ -76,6 +66,7 @@ function Login() {
       setMessage2("");
     }
     setContact(input);
+    // setNumber(Number)
   };
 
   // bbbbbbbbbbbbbbbbbbbb* resendcountdown bbbbbbbbbb
@@ -88,7 +79,30 @@ function Login() {
 
     return () => clearInterval(timer2);
   }, [timeLeft]);
-  // bbbbbbbbbbbbbbbbbbbbbbbbbb* resend otp bbbbbbbbbb
+
+
+  const latestno = () => {
+    toast.error("Number Not Registerd")
+    localStorage.setItem("Number", JSON.stringify(contact));
+    setTimeout(() => {
+      navigate("/More");
+    }, 2000);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(contact, "uuuuuuu");
+    const userr = await axios
+      .post("http://localhost:8080/mobile", { contact })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status) {
+          sendOtp();
+        } else {
+          latestno();
+        }
+      });
+  };
 
   return (
     <>
@@ -109,10 +123,11 @@ function Login() {
                 <p>Please enter your Phone number</p>
               </div>
               <div className="w-full h-13 ">
-                <form action="" id="myForm">
+                <form action="" id="myForm" onSubmit={handleSubmit}>
                   <input
                     id="numberInput"
                     type="text"
+                    name="contact"
                     value={contact}
                     pattern={"/^d+$/"}
                     maxLength={10}
@@ -139,14 +154,14 @@ function Login() {
                   By continuing you agree to our{" "}
                   <span
                     className="c
-              text-[#12daa8]"
+                     text-[#12daa8]"
                   >
                     <a href="">Terms of Use</a>
                   </span>{" "}
                   &{" "}
                   <span
                     className="c
-              text-[#12daa8]"
+                       text-[#12daa8]"
                   >
                     <a href=""></a>Privacy Policy
                   </span>
@@ -156,7 +171,7 @@ function Login() {
                 {contact && contact.length >= 10 ? (
                   <button
                     className="w-full bg-[#12daa8] rounded-xl text-black font-bold text-[13px]"
-                    onClick={sendOtp}
+                    onClick={handleSubmit}
                     // disabled={!contact}
                     type="submit"
                   >
@@ -165,19 +180,28 @@ function Login() {
                 ) : (
                   <button
                     className="lg:w-full lg:ml-0 w-[90%] ml-2 bg-[#12daa8] rounded-xl text-black font-bold text-[13px]"
-                    onClick={sendOtp}
+                    onClick={handleSubmit}
                     // disabled={!contact}
                     disabled
                     type="submit"
                   >
-                    <p>Disabled</p>
+                    <p  className="text-xl">Submit</p>
                   </button>
                 )}
               </div>
             </div>
           </div>
         ) : (
-        <OtpPage sentOtp={sentOtp} finalOtp={finalOtp} setFinalOtp={setFinalOtp} contact={contact}  sendOtp={sendOtp} timeLeft={timeLeft} message={message} />
+          //{" "}
+          <OtpPage
+            sentOtp={sentOtp}
+            finalOtp={finalOtp}
+            setFinalOtp={setFinalOtp}
+            contact={contact}
+            sendOtp={sendOtp}
+            timeLeft={timeLeft}
+            message={message}
+          />
         )}
       </div>
     </>

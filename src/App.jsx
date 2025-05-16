@@ -19,11 +19,12 @@ import Dropdown from './Component/Dropdown'
 import Map from './Component/Map'
 import Footer from './Component/Footer'
 import Login from './Component/Login'
-import Mordetail from './Component/Mordetail'
+import Mordetail from './Component/Signup'
 import Verify from './Component/Verify'
 import Payment from './Component/Payment'
 import RazorpayButton from "./Component/RazorpayButton";
 import OtpPage from './Component/Login/OtpPage'
+import Signup from './Component/Signup'
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
       <Route path="/Map" element={<Map/>}/> 
       <Route path="/Footer" element={<Footer/>}/>   
       <Route path="/" element={<Login/>}/>   
-      <Route path="/Mordetail" element={<Mordetail/>}/>  
+      <Route path="/More" element={<Signup/>}/>  
       <Route path="/Verify" element={<Verify/>}/>  
       <Route path="/otppage" element={<OtpPage/>}/>  
       <Route path="/upi" element={<Payment />} />
