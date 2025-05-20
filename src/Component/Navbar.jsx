@@ -70,7 +70,7 @@ function Navbar() {
                   className="hover-item  h-auto  bg-black absolute top-10 md:w-[250px]  w-[190px] right-[-60px] md:right-[-100px] lg:right-[-190px] lg:w-[300px] lg:top-[47px] "
                   // style={{ right: "-190px", width: "300px", top: "47px" }}
                 >
-                  <Link to="/">
+                  <Link to="/Profile">
                     <div className="  w-[100%] h-auto lg:mt-2 flex py-2">
                       <div className=" lg:lg:w-[21%] w-[30%] h-10 flex justify-center items-center ">
                         <CgProfile className="text-[30px]" />

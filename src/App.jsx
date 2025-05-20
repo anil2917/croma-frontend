@@ -25,6 +25,7 @@ import Payment from './Component/Payment'
 import RazorpayButton from "./Component/RazorpayButton";
 import OtpPage from './Component/Login/OtpPage'
 import Signup from './Component/Signup'
+import Profile from './Component/Profile'
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
       <Route path="/Map" element={<Map/>}/> 
       <Route path="/Footer" element={<Footer/>}/>   
       <Route path="/" element={<Login/>}/>   
+      <Route path="/Profile" element={<Profile/>}/>   
       <Route path="/More" element={<Signup/>}/>  
       <Route path="/Verify" element={<Verify/>}/>  
       <Route path="/otppage" element={<OtpPage/>}/>  

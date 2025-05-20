@@ -93,7 +93,7 @@ function Login() {
     e.preventDefault();
     console.log(contact, "uuuuuuu");
     const userr = await axios
-      .post("http://localhost:8080/mobile", { contact })
+      .post("https://croma-backend.vercel.app/mobile", { contact })
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
@@ -123,7 +123,7 @@ function Login() {
                 <p>Please enter your Phone number</p>
               </div>
               <div className="w-full h-13 ">
-                <form action="" id="myForm" onSubmit={handleSubmit}>
+                <form action="" id="myForm" >
                   <input
                     id="numberInput"
                     type="text"
