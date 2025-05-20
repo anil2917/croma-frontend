@@ -43,7 +43,7 @@ export default function Signup() {
       toast.error("!Different Passwords")
     } else {
       const user = await axios
-        .post("https://croma-backend.vercel.app/creatuser", formData)
+        .post("http://localhost:8080/creatuser", formData)
         .then((res) => {
           console.log(res.data);
           if(res.data.status){

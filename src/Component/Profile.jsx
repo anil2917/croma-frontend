@@ -17,7 +17,7 @@ const Profile = () => {
    const handleSubmit = async(e)=>{
       e.preventDefault();
       console.log('www')
-      const usepro = await axios.post("https://croma-backend.vercel.app/Profile",profiledata).then((res)=>{
+      const usepro = await axios.post("http://localhost:8080/Profile",profiledata).then((res)=>{
         console.log(res)
       })
    }
