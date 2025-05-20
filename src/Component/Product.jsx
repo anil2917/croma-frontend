@@ -53,7 +53,7 @@ function Product() {
                 <img src={item.image} alt="" className="w-[100%] h-[100%]   " />
               </div>
               <div className="ml-4  md:ml-1 lg:w-[350px] lg:h-[190px] h-auto mt-2 rounded-3xl md:w-[78%] w-[68%]">
-                <h2 className=" text-white font-bold lg:text-[18px] text-[12px]  ml-1 h-[40px]  lg:h-[60px] overflow-hidden">
+                <h2 className=" text-white font-bold lg:text-[18px] text-[12px]  ml-1 h-[37px]  lg:h-[60px] overflow-hidden">
                   {item.title}
                 </h2>
                 <h2 className=" text-white  lg:text-1xl  ml-1 lg:h-[25px] h-[20px] uppercase overflow-hidden ">
