@@ -14,7 +14,7 @@ const Profile = () => {
     e.preventDefault();
     console.log("www");
     const usepro = await axios
-      .post("https://croma-backend.vercel.app/Profile", profiledata)
+      .post("https://croma-backend.vercel.app/Profile", {profiledata})
       .then((res) => {
         console.log(res.data);
       });
