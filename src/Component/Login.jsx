@@ -86,7 +86,7 @@ function Login() {
     localStorage.setItem("Number", JSON.stringify(contact));
     setTimeout(() => {
       navigate("/More");
-    }, 2000);
+    }, 1000);
   };
 
   const handleSubmit = async (e) => {
