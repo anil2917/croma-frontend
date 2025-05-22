@@ -14,7 +14,7 @@ const Profile = () => {
     e.preventDefault();
     console.log("www");
     const usepro = await axios
-      .post("https://croma-backend.vercel.app/Profile", {profiledata})
+      .post("https://croma-backend.vercel.app/Profile", profiledata)
       .then((res) => {
         console.log(res.data);
       });
@@ -22,6 +22,10 @@ const Profile = () => {
   useEffect(() => {
     let contactNumber = JSON.parse(localStorage.getItem("Number"));
     setDefaultNumber(contactNumber);
+       setprofiledata({
+      ...profiledata,
+      number: contactNumber,
+    });
   }, [defaultNumber]);
   return (
     <div
