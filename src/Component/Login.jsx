@@ -93,7 +93,7 @@ function Login() {
     e.preventDefault();
     console.log(contact, "uuuuuuu");
     const userr = await axios
-      .post("https://croma-backend.vercel.app/mobile", { contact })
+      .post("https://croma-backend.vercel.app/allUser", { contact })
       .then((res) => {
         console.log(res.data);
         if (res.data.status) {
