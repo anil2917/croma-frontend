@@ -4,7 +4,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
-const [timeLeft, setTimeLeft] = useState(10);
+
 
 function OtpPage({
   sentOtp,
@@ -17,6 +17,7 @@ function OtpPage({
   console.log(sentOtp);
   const navigate = useNavigate();
   const [resend, setresend] = useState("wait");
+  const [timeLeft, setTimeLeft] = useState(10);
   const inputRefs = useRef([]);
 
   function getOtp(e, index) {
