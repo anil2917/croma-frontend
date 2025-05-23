@@ -41,7 +41,6 @@ function Login() {
   }, [otp]);
 
   const sendOtp = () => {
-    console.log("funnctionn  runnn");
     const code = generateOTP();
     setSentOtp(code);
     setStep("verify");
