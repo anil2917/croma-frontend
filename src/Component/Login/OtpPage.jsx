@@ -66,6 +66,7 @@ function OtpPage({
     }
   };
   function resendOtp(){
+    setTimeLeft(10)
     if (timeLeft === 0) return;
     const timer2 = setInterval(() => {
       setTimeLeft((prev) => prev - 1);
