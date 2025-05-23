@@ -58,7 +58,7 @@ function OtpPage({
       setresend("responce");
     }, 10000); // 30 seconds
     return () => clearTimeout(timer);
-  }, []);
+  }, [timeLeft]);
 
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && e.target.value === "" && index > 0) {
@@ -69,7 +69,6 @@ function OtpPage({
   return (
     <>
       <Toaster />
-
       <div className="w-[500px]    border border-[#353535] bg-black flex  justify-center items-center text-white rounded-l">
         <div className="w-[378px] h-[346px]    ">
           <div className=" w-full flex  justify-center ">
