@@ -15,7 +15,7 @@ function Login() {
   const [finalOtp, setFinalOtp] = useState("");
   // import React{ useState} from "react";
   const { ssss, setssss } = useState("");
-  const [timeLeft, setTimeLeft] = useState(30);
+  
   const navigate = useNavigate();
   const [Number, setNumber] = useState();
   
@@ -70,15 +70,7 @@ function Login() {
   };
 
   // bbbbbbbbbbbbbbbbbbbb* resendcountdown bbbbbbbbbb
-  useEffect(() => {
-    if (timeLeft === 0) return;
 
-    const timer2 = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(timer2);
-  }, [timeLeft]);
 
 
   const latestno = () => {
@@ -199,7 +191,6 @@ function Login() {
             setFinalOtp={setFinalOtp}
             contact={contact}
             sendOtp={sendOtp}
-            timeLeft={timeLeft}
             message={message}
           />
         )}

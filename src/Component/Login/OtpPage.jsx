@@ -4,6 +4,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
+const [timeLeft, setTimeLeft] = useState(10);
 
 function OtpPage({
   sentOtp,
@@ -11,7 +12,6 @@ function OtpPage({
   setFinalOtp,
   contact,
   sendOtp,
-  timeLeft,
   message,
 }) {
   console.log(sentOtp);
@@ -32,10 +32,10 @@ function OtpPage({
     if (enteredOTP.length === sentOtp.length) {
       if (enteredOTP === sentOtp) {
         toast.success(" OTP is correct");
-        
-        setTimeout(()=>{
-navigate("/home")
-        },2000)
+
+        setTimeout(() => {
+          navigate("/home");
+        }, 1000);
       } else {
         toast.error(" OTP is incorrect");
       }
@@ -43,11 +43,19 @@ navigate("/home")
       alert("");
     }
   };
- 
+  useEffect(() => {
+    if (timeLeft === 0) return;
+    const timer2 = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer2);
+  }, [timeLeft]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setresend("responce");
-    }, 30000); // 30 seconds
+    }, 10000); // 30 seconds
     return () => clearTimeout(timer);
   }, []);
 
@@ -73,10 +81,7 @@ navigate("/home")
           </div>
           <div className="w-full h-15 ">
             <form action="" className="ml-11">
-              <div
-                style={{ display: "flex", gap: "10px" }}
-                className=""
-              >
+              <div style={{ display: "flex", gap: "10px" }} className="">
                 {[...Array(4)].map((_, index) => (
                   <input
                     key={index}
