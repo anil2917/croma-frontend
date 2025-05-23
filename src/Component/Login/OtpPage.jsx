@@ -65,15 +65,6 @@ function OtpPage({
       inputRefs.current[index - 1].focus();
     }
   };
-  function resendOtp(){
-    setTimeLeft(10)
-    if (timeLeft === 0) return;
-    const timer2 = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(timer2);
-  }
 
   return (
     <>
@@ -118,7 +109,7 @@ function OtpPage({
                 Didn't Receive Your OTP?
                 <span
                   className="text-[12px] underline text-[#12daa8]"
-                  onClick={resendOtp}
+                  onClick={sendOtp}
                 >
                   Resend otp
                 </span>
