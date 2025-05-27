@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 const Profile = () => {
   const [profiledata, setprofiledata] = useState();
   const [defaultNumber, setDefaultNumber] = useState("");
+  
 
   const handlechange = (e) => {
     setprofiledata({ ...profiledata, [e.target.name]: e.target.value });
@@ -90,7 +91,7 @@ const Profile = () => {
             />
           </div>
 
-          <div className="mb-4 lg:ml-18 w-full ">
+          <div className="mb-4 lg:ml-10 w-full ">
             <label className="block lg:text-[18px] text-sm mb-1 ">Gender</label>
             <div className="flex   sm:gap- gap-4 text-m h-auto  flex-wrap">
               <label className="flex items-center gap-2 ">
@@ -139,7 +140,7 @@ const Profile = () => {
           <div className="mb-4 lg:w-[45%] ">
             <label className="block lg:text-[18px] text-sm mb-1">Mobile number</label>
             <div className="flex">
-              <span className="bg-white text-black lg:h-12 px-3 py-2 rounded-l-md text-sm">
+              <span className="bg-white text-black lg:h-12 px-3 py-3 rounded-l-md text-sm">
                 +91
               </span>
               <input
@@ -159,6 +160,7 @@ const Profile = () => {
               type="email"
               name="email"
               onChange={handlechange}
+              placeholder="Enter Your Email"
               className="w-full px-3 lg:h-12 py-2 bg-white text-black rounded-md focus:outline-none text-sm"
             />
           </div>
@@ -170,7 +172,8 @@ const Profile = () => {
               name="dob"
               required
               onChange={handlechange}
-              className="w-full lg:h-12 px-3 py-2 bg-white text-black rounded-md focus:outline-none text-sm"
+              className="w-full lg:h-12 px-3 py-2 bg-white text-black rounded-md focus:outline-none text-sm placeholder:text-black"
+              placeholder="Enter of your dob"
             />
           </ div>
           <div className="mb-4 lg:w-[45%] ">
