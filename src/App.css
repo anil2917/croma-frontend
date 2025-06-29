@@ -71,3 +71,16 @@
     }
 
   }
+
+  .lft-btn{
+    position: absolute;
+    left: -6px;
+    bottom: -4px;
+    color: antiquewhite;
+  }
+  .rgt-btn{
+    position: absolute;
+    right: 0;
+    top: 4px;
+    color: antiquewhite;
+  }
