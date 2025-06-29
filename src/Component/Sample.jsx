@@ -81,7 +81,7 @@ const Sample = () => {
             <h2 className="lg:text-xl md:text-[32px] text-[28px] font-bold pt-3  lg:font-semibold md:ml-3 lg:ml-0 px-7 ">
               Not a Product. Not a Platform. <span className="text-orange-500">A Philosophy</span>
             </h2>
-            <p className="mt-4 lg:text-sm text-gray-700 text-m  md:ml-8 md:w-[98%]   ">
+            <p className="mt-4 lg:text-sm text-gray-700 text-m mx-auto md:ml-8 md:w-[98%]   ">
               Sample Project is the invisible architecture behind transformative brand cultivating ideas,
               people, and systems that create meaningful impact across diverse industries. From wellness to
               culture, from technology to aesthetics we operate at the intersection of feeling and future.
@@ -98,7 +98,7 @@ const Sample = () => {
         <p className="mt-2 lg:w-180 md:w-150 w-100 mx-auto   font-bold text-m text-gray-700">
           We don’t follow trends. We create the conditions for timelessness. Explore the growing constellation of ventures born from our ethos.
         </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-3 lg:pl-10  pl-8 mt-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-3 lg:pl-10  pl-4 mt-10">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="bg-white border w-87  flex-wrap border-purple-800 overflow-hidden rounded-xl shadow">
               <div className="flex items-center w-100 ">
@@ -120,7 +120,7 @@ const Sample = () => {
         <div className="lg:w-150">
           <div className="text-orange-500 text-m font-semibold mb-2 text-white bg-orange-500 lg:text-sm text-[20px] font-semibold   lg:w-32 w-40 lg:px-2 px-2 py-1 relative top-6  lg:left-4 md:left-80 left-35 ">The Philosophy</div>
           <div className="bg-orange-100 p-3  border-t-2 md:h-55  lg:h-55 h-80  ">
-            <h2 className="lg:text-xl md:text-[32px]  text-[31px] font-bold py-2  lg:font-semibold lg:ml-0 mx-auto  md:ml-12  ">
+            <h2 className="lg:text-xl md:text-[32px]  text-[31px] font-bold py-2   lg:font-semibold lg:ml-0 ml-15  md:ml-12  ">
               What If Business Could <span className="text-orange-500">Feel Like Art?</span>
             </h2>
             <p className="mt-2 lg:text-sm text-gray-700 text-m   md:ml-6 text-center lg:text-start lg:ml-2  ">
